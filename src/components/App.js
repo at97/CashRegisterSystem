@@ -4,11 +4,12 @@ import Footer from './Footer';
 import Header from "./Header"
 import NumberGrid from './NumberGrid';
 import Results from './Results';
-import {useState} from 'react';
+import { useState } from 'react';
 
 // Author: Ashwin Thottupurath
 // Student ID: 150387207
 // Date: June 27, 2021
+// Github repo: https://github.com/at97/CashRegisterSystem/
 
 const App = () => {
     // Generate numbers from 1 to NUMBERS_LIMIT
@@ -48,7 +49,7 @@ const App = () => {
     const cashValues = [1, 5, 10, 20];
     const currencyTotal = (cashAmount) => {
         // Only calculate total when 5 numbers have been selected
-        if(selectedNumbers.length === 5) {
+        if (selectedNumbers.length === 5) {
             let total = totalCash + cashAmount;
             console.log(total);
             setTotalCash(total);
@@ -73,7 +74,7 @@ const App = () => {
 
     // Display ticket
     const cashOut = (selectedNumbers, totalCash) => {
-        if(selectedNumbers.length === 5) {
+        if (selectedNumbers.length === 5) {
             alert(`Your numbers are ${selectedNumbers} and your total is $${totalCash}`);
             // Reload app
             window.location.reload(false);
@@ -92,9 +93,9 @@ const App = () => {
     return (
         <div className="container">
             <Header />
-            <NumberGrid numbers={numbersArray} selectNumber={selectNumber} selectedNumbers={selectedNumbers} randomNumbers={randomNumbers} cashOut={cashOut} totalCash={totalCash} clearTicket={clearTicket}/>
-            <CashList cashValues={cashValues} currencyTotal={currencyTotal}/>
-            <Results selectedNumbers={selectedNumbers} totalCash={totalCash}/>
+            <NumberGrid numbers={numbersArray} selectNumber={selectNumber} selectedNumbers={selectedNumbers} randomNumbers={randomNumbers} cashOut={cashOut} totalCash={totalCash} clearTicket={clearTicket} />
+            <CashList cashValues={cashValues} currencyTotal={currencyTotal} />
+            <Results selectedNumbers={selectedNumbers} totalCash={totalCash} />
             <Footer />
         </div>
     );
